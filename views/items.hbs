@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Items</h2>
+        <a href="/items/add" class="btn btn-success pull-right mb-3">Add Post</a>
+        <hr />
+
+        {{#if items}}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Image</th>
+                        <th></th> <!-- For Remove button -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each items}}
+                        <tr>
+                            <td>{{this.title}}</td>
+                            <td>${{this.price}}</td>
+                            <td>{{this.category}}</td>
+                            <td>{{#formatDate this.postDate}}{{/formatDate}}</td>
+                            <td>
+                                <img src="{{this.featureImage}}" alt="{{this.title}}" style="width:100px;">
+                            </td>
+                            <td>
+                                <a href="/items/delete/{{this.id}}" class="btn btn-danger">Remove</a>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <p class="text-muted">{{message}}</p>
+        {{/if}}
+    </div>
+</div>

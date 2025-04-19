@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adharsh NK's Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="navbar-brand">WEB322 - Adharsh NK</a>
+                <ul class="navbar-nav">
+                    {{#navLink "/shop"}}Shop{{/navLink}}
+                    {{#navLink "/about"}}About{{/navLink}}
+                    {{#if session.user}}
+                        {{#navLink "/items"}}Items{{/navLink}}
+                        {{#navLink "/categories"}}Categories{{/navLink}}
+                        {{#navLink "/items/add"}}Add Item{{/navLink}}
+                    {{/if}}
+                </ul>
+                <ul class="navbar-nav right">
+                    {{#if session.user}}
+                    <li>
+                        <span>{{session.user.userName}}</span>
+                        <ul>
+                            <li><a href="/userHistory">User History</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                    {{else}}
+                    {{#navLink "/register"}}Register{{/navLink}}
+                    {{#navLink "/login"}}Login{{/navLink}}
+                    {{/if}}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        {{{body}}}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Adharsh's Store. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
