@@ -1,7 +1,12 @@
 /*********************************************************************************
-*  WEB322 – Assignment 06
-*  Name: Adharsh Nellikode Kaladharan
-*  Student ID: 167892223
+WEB322 – Assignment 06
+I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part * of this assignment has
+been copied manually or electronically from any other source (including 3rd party web sites) or distributed to other students.
+Name: Adharsh Nellikode Kaladharan
+Student ID: 167892223
+Date: 18-04-2025
+Cyclic Web App URL:https://web322-u6lz.onrender.com 
+GitHub Repository URL: https://github.com/adharshkaladharan/WEB322.git
 ********************************************************************************/
 
 const express = require("express");
